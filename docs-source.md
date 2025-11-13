@@ -92,7 +92,7 @@ Instead, in your Ink script, you just start a line with the special $ character:
 
     $ popup: text = Welcome to Inchiostro!
 
-(We do not use tags to trigger special commands, because Ink text is more powerful. Ink Text can do variable insertions which allows you to pull off a few neat tricks. Tags have also historically been buggy, so text it is.)
+(We do not use tags to trigger special commands, because Ink text is more powerful. Ink text can do variable insertions which allows you to pull off a few neat tricks. Tags have also historically been buggy, so text it is.)
 
 The space after the $ symbol is optional. The colon is optional, too. So, you can also write:
 
@@ -137,51 +137,51 @@ IMPORTANT: Use this at the start of your Ink story (before the first choice) and
 
 # ASSETS
 
-## INTRO TO ASSETS - IMPORTANT!
+## Intro to Using Assets
 
-    Inchiostro supports images and audio.
+Inchiostro supports images and audio.
 
-    Inchiostro expects all your game assets to go into the "./assets" sub-directory of your project folder.
+Inchiostro expects all your game assets to go into the "./assets" sub-directory of your project folder.
 
-    Inchiostro preloads all images and audios at start-up, so they are ready when we need them.
-    
-    This makes for a better user experience, but it means that you cannot define your assets directly inside your Ink story.
+Inchiostro preloads all images and audios at start-up, so they are ready when we need them.
 
-    Instead, open the file "./author/assetDefinitions.js" in any text editor.
+This makes for a better user experience, but it means that you cannot define your assets directly inside your Ink story.
 
-    The contents may look like this (or similar):
+Instead, open the file "./author/assetDefinitions.js" in any text editor.
+
+The contents may look like this (or similar):
 
     var $_assetDefinitions = `
 
-      castle: castle.gif
-      eveAngry: eve/angry.jpeg
-      eveAnnoyed: eve/annoyed.jpeg
+        castle: castle.gif
+        eveAngry: eve/angry.jpeg
+        eveAnnoyed: eve/annoyed.jpeg
 
-      rain: audio/rain.mp3
-      coins: audio/coins.mp3
-      slam: audio/slam.wav
+        rain: audio/rain.mp3
+        coins: audio/coins.mp3
+        slam: audio/slam.wav
 
     `
 
-    The part in front of the colon is the asset name. The asset name must be a SINGLE WORD like "castle" or "eveAngry". This is a unique identifier for your use.
+The part in front of the colon is the asset name. The asset name must be a SINGLE WORD like "castle" or "eveAngry". This is a unique identifier for your use.
 
-    The asset path is the part to the right of the colon. The asset path could be something like "castle.gif", meaning: load the image "./assets/castle.gif"
+The asset path is the part to the right of the colon. The asset path could be something like "castle.gif", meaning: load the image "./assets/castle.gif"
 
-    If you are using sub-directories inside "assets", it could also be, for example: "eve/angry.jpeg", meaning: load the image "./assets/eve/angry.jpeg"
+If you are using sub-directories inside "assets", it could also be, for example: "eve/angry.jpeg", meaning: load the image "./assets/eve/angry.jpeg"
 
-    Only use forward slashes for paths (/), never backward slashes (\\).
+Only use forward slashes for paths (/), never backward slashes (\\).
 
-    Inchiostro auto-detects your asset type depending on the file extension, so don't name an audio file, say: "sound.jpeg", that is not only confusing, but will also fail.
+Inchiostro auto-detects your asset type depending on the file extension, so don't name an audio file, say: "sound.jpeg", that is not only confusing, but will also fail.
 
-    Supported extensions / file types:
+Supported extensions / file types:
 
-    image: "png", "jpg", "jpeg", "gif", "webp", "svg"
++ image: "png", "jpg", "jpeg", "gif", "webp", "svg"
 
-    audio: "mp3", "wav", "ogg"
++ audio: "mp3", "wav", "ogg"
 
-    Each asset definition in the file "./author/assetDefinitions.js" must point to an existing file or you will get an error.
+Each asset definition in the file "./author/assetDefinitions.js" must point to an existing file or you will get an error.
 
-    Once you have defined your assets, you can use them in you Ink story by using their **asset name** (not the file path). See the asset commands explained below.
+Once you have defined your assets, you can use them in you Ink story by using their **asset name** (not the file path). See the asset commands explained below.
 
 ## ASSET COMMANDS
 
@@ -195,7 +195,7 @@ The "image" command displays an image:
 
 "assetName" is the asset name you assigned in "./author/assetDefinitions.js" (see above).
 
-The image command has also optional parameters:
+The image command also has optional parameters:
 
 "alt" sets an alt text for the image (good for accessibility):
 
@@ -231,7 +231,7 @@ The ambient sound will play in the background, continuously looping, until it is
 
     $ ambient: name = assetName
 
-When the ambient sound changes, the old sound will quickly fade out, then the new sound will quickly fade in to give a more pleasing acoustic experience. If you really want to change the ambient sound immediately and abruptly with no fade effect at all, do:
+When the ambient sound changes, the old sound will quickly fade out, then the new sound will quickly fade in (to give the player a more pleasing acoustic experience). If you really want to change the ambient sound immediately and abruptly with no fade effect at all, do:
 
     $ ambient: name = thunders; abrupt = yes
 

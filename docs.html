@@ -97,7 +97,7 @@
 <pre><code>$ popup: text = Welcome to Inchiostro!
 </code></pre>
 
-<p>(We do not use tags to trigger special commands, because Ink text is more powerful. Ink Text can do variable insertions which allows you to pull off a few neat tricks. Tags have also historically been buggy, so text it is.)</p>
+<p>(We do not use tags to trigger special commands, because Ink text is more powerful. Ink text can do variable insertions which allows you to pull off a few neat tricks. Tags have also historically been buggy, so text it is.)</p>
 
 <p>The space after the $ symbol is optional. The colon is optional, too. So, you can also write:</p>
 
@@ -146,52 +146,53 @@
 
 <h1 id="ASSETS">ASSETS</h1>
 
-<h2 id="INTRO%20TO%20ASSETS%20-%20IMPORTANT!">INTRO TO ASSETS - IMPORTANT!</h2>
+<h2 id="Intro%20to%20Using%20Assets">Intro to Using Assets</h2>
 
-<pre><code>Inchiostro supports images and audio.
+<p>Inchiostro supports images and audio.</p>
 
-Inchiostro expects all your game assets to go into the ".&#47;assets" sub-directory of your project folder.
+<p>Inchiostro expects all your game assets to go into the &#8220;.&#47;assets&#8221; sub-directory of your project folder.</p>
 
-Inchiostro preloads all images and audios at start-up, so they are ready when we need them.
+<p>Inchiostro preloads all images and audios at start-up, so they are ready when we need them.</p>
 
-This makes for a better user experience, but it means that you cannot define your assets directly inside your Ink story.
+<p>This makes for a better user experience, but it means that you cannot define your assets directly inside your Ink story.</p>
 
-Instead, open the file ".&#47;author&#47;assetDefinitions.js" in any text editor.
+<p>Instead, open the file &#8220;.&#47;author&#47;assetDefinitions.js&#8221; in any text editor.</p>
 
-The contents may look like this (or similar):
+<p>The contents may look like this (or similar):</p>
 
-var $_assetDefinitions = `
+<pre><code>var $_assetDefinitions = `
 
-  castle: castle.gif
-  eveAngry: eve&#47;angry.jpeg
-  eveAnnoyed: eve&#47;annoyed.jpeg
+    castle: castle.gif
+    eveAngry: eve&#47;angry.jpeg
+    eveAnnoyed: eve&#47;annoyed.jpeg
 
-  rain: audio&#47;rain.mp3
-  coins: audio&#47;coins.mp3
-  slam: audio&#47;slam.wav
+    rain: audio&#47;rain.mp3
+    coins: audio&#47;coins.mp3
+    slam: audio&#47;slam.wav
 
 `
-
-The part in front of the colon is the asset name. The asset name must be a SINGLE WORD like "castle" or "eveAngry". This is a unique identifier for your use.
-
-The asset path is the part to the right of the colon. The asset path could be something like "castle.gif", meaning: load the image ".&#47;assets&#47;castle.gif"
-
-If you are using sub-directories inside "assets", it could also be, for example: "eve&#47;angry.jpeg", meaning: load the image ".&#47;assets&#47;eve&#47;angry.jpeg"
-
-Only use forward slashes for paths (&#47;), never backward slashes (\\).
-
-Inchiostro auto-detects your asset type depending on the file extension, so don&#39;t name an audio file, say: "sound.jpeg", that is not only confusing, but will also fail.
-
-Supported extensions &#47; file types:
-
-image: "png", "jpg", "jpeg", "gif", "webp", "svg"
-
-audio: "mp3", "wav", "ogg"
-
-Each asset definition in the file ".&#47;author&#47;assetDefinitions.js" must point to an existing file or you will get an error.
-
-Once you have defined your assets, you can use them in you Ink story by using their **asset name** (not the file path). See the asset commands explained below.
 </code></pre>
+
+<p>The part in front of the colon is the asset name. The asset name must be a SINGLE WORD like &#8220;castle&#8221; or &#8220;eveAngry&#8221;. This is a unique identifier for your use.</p>
+
+<p>The asset path is the part to the right of the colon. The asset path could be something like &#8220;castle.gif&#8221;, meaning: load the image &#8220;.&#47;assets&#47;castle.gif&#8221;</p>
+
+<p>If you are using sub-directories inside &#8220;assets&#8221;, it could also be, for example: &#8220;eve&#47;angry.jpeg&#8221;, meaning: load the image &#8220;.&#47;assets&#47;eve&#47;angry.jpeg&#8221;</p>
+
+<p>Only use forward slashes for paths (&#47;), never backward slashes (\).</p>
+
+<p>Inchiostro auto-detects your asset type depending on the file extension, so don&#8217;t name an audio file, say: &#8220;sound.jpeg&#8221;, that is not only confusing, but will also fail.</p>
+
+<p>Supported extensions &#47; file types:</p>
+
+<ul>
+<li><p>image: &#8220;png&#8221;, &#8220;jpg&#8221;, &#8220;jpeg&#8221;, &#8220;gif&#8221;, &#8220;webp&#8221;, &#8220;svg&#8221;</p></li>
+<li><p>audio: &#8220;mp3&#8221;, &#8220;wav&#8221;, &#8220;ogg&#8221;</p></li>
+</ul>
+
+<p>Each asset definition in the file &#8220;.&#47;author&#47;assetDefinitions.js&#8221; must point to an existing file or you will get an error.</p>
+
+<p>Once you have defined your assets, you can use them in you Ink story by using their <strong>asset name</strong> (not the file path). See the asset commands explained below.</p>
 
 <h2 id="ASSET%20COMMANDS">ASSET COMMANDS</h2>
 
@@ -206,7 +207,7 @@ Once you have defined your assets, you can use them in you Ink story by using th
 
 <p>&#8220;assetName&#8221; is the asset name you assigned in &#8220;.&#47;author&#47;assetDefinitions.js&#8221; (see above).</p>
 
-<p>The image command has also optional parameters:</p>
+<p>The image command also has optional parameters:</p>
 
 <p>&#8220;alt&#8221; sets an alt text for the image (good for accessibility):</p>
 
@@ -248,7 +249,7 @@ Once you have defined your assets, you can use them in you Ink story by using th
 <pre><code>$ ambient: name = assetName
 </code></pre>
 
-<p>When the ambient sound changes, the old sound will quickly fade out, then the new sound will quickly fade in to give a more pleasing acoustic experience. If you really want to change the ambient sound immediately and abruptly with no fade effect at all, do:</p>
+<p>When the ambient sound changes, the old sound will quickly fade out, then the new sound will quickly fade in (to give the player a more pleasing acoustic experience). If you really want to change the ambient sound immediately and abruptly with no fade effect at all, do:</p>
 
 <pre><code>$ ambient: name = thunders; abrupt = yes
 </code></pre>
