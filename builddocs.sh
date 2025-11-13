@@ -11,7 +11,6 @@ cat <<EOF
 <head>
 <meta charset="utf-8">
 <title>$TITLE</title>
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="docs-style.css">
 </head>
 <body>
