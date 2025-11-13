@@ -44,7 +44,7 @@ Next, we will create a new Inchiostro project.
 
 ### The simple way: use Inkberry
 
-Inkberry is an app that creates, compiles and previews Ink stories. It can be used with all kings of story templates, but it also comes with Inchiostro built-in.
+Inkberry is an app that creates, compiles and previews Ink stories. It can be used with different story templates, but it also comes with Inchiostro built-in.
 
 First, download [Inkberry](https://github.com/Daniel-Wittgenstein/inkberry-app/releases/tag/0.0.12/)
 
@@ -58,16 +58,23 @@ Choose the correct download link:
 
 Unzip the program and run it. Your OS might warn you that the app is not code-signed.
 
-(The creator of Inkberry (accidentally also me) assumes zero responsibility for any damages that might happen. Do not use Inkberry with story templates you do not trust.)
+(The creator of Inkberry (accidentally also me) assumes zero responsibility for any damages that might happen. Also, do not use Inkberry with story templates you do not trust.)
 
-Now use the graphical user interface to create a new Inchiostro project. Done.
+Now use the graphical user interface to create a new Inchiostro project.
 
 ![Alt text](img/screen1.png)
+
 ![Alt text](img/screen2.png)
+
+A window with some text should open. This is the preview of your game.
+
+Click on "Project" -> "Open in File Manager" to open the newly created directory. You should see all kinds of files inside it. You need the file "story.ink". What you want to do now, is go into **Inky** and open the file "story.ink" with Inky.
+
+Change some text and save. You should see your changes reflected in the Inkberry preview window!
 
 ### The manual way
 
-Alternatively, [download the Inchiostro template](https://github.com/Daniel-Wittgenstein/inchiostro-dist/raw/refs/heads/main/inchiostro-latest.zip) manually.
+If Inkberry does not work for you (or you are paranoid about security), you can also [download the Inchiostro template](https://github.com/Daniel-Wittgenstein/inchiostro-dist/raw/refs/heads/main/inchiostro-latest.zip) manually.
 
 It's basically just a bunch of JS and CSS files and an index.html file. Inchiostro works in a similar way to the standard web template exported by Inky: it expects a file called "story.js" starting with "var storyContent = ..."
 
