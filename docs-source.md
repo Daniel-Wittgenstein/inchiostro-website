@@ -341,24 +341,11 @@ Caveat 2: Inchiostro cannot save event handlers that are attached to DOM element
 
 # Distributing your game
 
-    ## Building an Asset Map
+## Building an Asset Map
 
-    If you are using Inkberry, in the top bar click "Build" -> "Build Asset Map"
+If you are using Inkberry, in the top bar click "Build" -> "Build Asset Map". This will create a single file called "xAssetMapAuto.js" in your project folder. The file contains all of your game assets. You can distribute your game with this file INSTEAD OF your assets folder.
 
-    This will create a single file called "xAssetMapAuto.js" in your project folder.
-
-    The file contains all of your game assets.
-
-    You can distribute your game with this file INSTEAD OF your assets folder.
-
-    The disadvantage is that the "xAssetMapAuto.js" file will be a bit bigger than your assets are by themselves.
-
-    The advantage is that your game will play more nicely with browser when players run the game from a local file.
-
-    If you are uploading your game to a server anyway, you shouldn't do this, it's just a trick for offline gaming, really.
-
-    (You can also create two separate versions, one for uploading and one for local play.)
-
+The disadvantage is that the "xAssetMapAuto.js" file will be a bit bigger than your assets are by themselves. The advantage is that your game will play more nicely with browser when players run the game from a local file. If you are uploading your game to a server anyway, you shouldn't do this, it's just a trick for offline gaming, really. (You can also create two separate versions, one for uploading and one for local play.)
 
 # Common Issues
 
@@ -376,43 +363,43 @@ However, Inchiostro exposes a couple of JavaScript functions (and some objects) 
 
 ## inch.story
 
-    The Ink story object, i.e. the object that is returned when you do "new inkjs.Story(storyContent)"
+The Ink story object, i.e. the object that is returned when you do "new inkjs.Story(storyContent)"
 
-    Has all kinds of properties and methods. See Ink's own documentation.
+Has all kinds of properties and methods. See Ink's own documentation.
 
 ## inch.getState()
 
-    Returns the app's current state as an object. The object can be safely passed to JSON.stringify.
+Returns the app's current state as an object. The object can be safely passed to JSON.stringify.
 
-    This is more than just the Ink story's current state, it also includes the state of the DOM, which background audio is playing etc.
+This is more than just the Ink story's current state, it also includes the state of the DOM, which background audio is playing etc.
 
-    It does NOT include user settings, though. (For example, whether the user has the audio muted.) (User settings are saved to the localStorage independently and it's uncommon for stories to directly mess with them.)
+It does NOT include user settings, though. (For example, whether the user has the audio muted.) (User settings are saved to the localStorage independently and it's uncommon for stories to directly mess with them.)
 
-    The return value of this is basically like a save game state.
+The return value of this is basically like a save game state.
 
 ## inch.setState(appState)
 
-    Sets the app's state using an app state previously returned from "inch.getState"
+Sets the app's state using an app state previously returned from "inch.getState"
 
-    Basically, this is like loading a save game state.
+Basically, this is like loading a save game state.
 
-    (You do not have to call "inch.story.state.LoadJson" after this. "setState" already sets the Ink story's state correctly.)
+(You do not have to call "inch.story.state.LoadJson" after this. "setState" already sets the Ink story's state correctly.)
 
 ## inch.restartStory()
 
-    Restarts the story immediately (no confirmation dialog).
+Restarts the story immediately (no confirmation dialog).
 
 ## inch.undo()
 
-    Undoes the last turn and returns true.
+Undoes the last turn and returns true.
 
-    If undo is currently not possible, this just doesn't do anything and false is returned.
+If undo is currently not possible, this just doesn't do anything and false is returned.
 
 ## inch.isUndoPossible()
 
-    Returns true, if undo is currently possible. Otherwise returns false.
+Returns true, if undo is currently possible. Otherwise returns false.
 
 ## inch.showSimplePopup(htmlString)
 
-    Shows a simple popup. Pass the contents of the popup as a string containing HTML.
+Shows a simple popup. Pass the contents of the popup as a string containing HTML.
 

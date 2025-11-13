@@ -364,24 +364,11 @@ Write this into the main panel.
 
 <h1 id="Distributing%20your%20game">Distributing your game</h1>
 
-<pre><code>## Building an Asset Map
+<h2 id="Building%20an%20Asset%20Map">Building an Asset Map</h2>
 
-If you are using Inkberry, in the top bar click "Build" -&#62; "Build Asset Map"
+<p>If you are using Inkberry, in the top bar click &#8220;Build&#8221; -&#62; &#8220;Build Asset Map&#8221;. This will create a single file called &#8220;xAssetMapAuto.js&#8221; in your project folder. The file contains all of your game assets. You can distribute your game with this file INSTEAD OF your assets folder.</p>
 
-This will create a single file called "xAssetMapAuto.js" in your project folder.
-
-The file contains all of your game assets.
-
-You can distribute your game with this file INSTEAD OF your assets folder.
-
-The disadvantage is that the "xAssetMapAuto.js" file will be a bit bigger than your assets are by themselves.
-
-The advantage is that your game will play more nicely with browser when players run the game from a local file.
-
-If you are uploading your game to a server anyway, you shouldn&#39;t do this, it&#39;s just a trick for offline gaming, really.
-
-(You can also create two separate versions, one for uploading and one for local play.)
-</code></pre>
+<p>The disadvantage is that the &#8220;xAssetMapAuto.js&#8221; file will be a bit bigger than your assets are by themselves. The advantage is that your game will play more nicely with browser when players run the game from a local file. If you are uploading your game to a server anyway, you shouldn&#8217;t do this, it&#8217;s just a trick for offline gaming, really. (You can also create two separate versions, one for uploading and one for local play.)</p>
 
 <h1 id="Common%20Issues">Common Issues</h1>
 
@@ -399,50 +386,43 @@ If you are uploading your game to a server anyway, you shouldn&#39;t do this, it
 
 <h2 id="inch.story">inch.story</h2>
 
-<pre><code>The Ink story object, i.e. the object that is returned when you do "new inkjs.Story(storyContent)"
+<p>The Ink story object, i.e. the object that is returned when you do &#8220;new inkjs.Story(storyContent)&#8221;</p>
 
-Has all kinds of properties and methods. See Ink&#39;s own documentation.
-</code></pre>
+<p>Has all kinds of properties and methods. See Ink&#8217;s own documentation.</p>
 
 <h2 id="inch.getState()">inch.getState()</h2>
 
-<pre><code>Returns the app&#39;s current state as an object. The object can be safely passed to JSON.stringify.
+<p>Returns the app&#8217;s current state as an object. The object can be safely passed to JSON.stringify.</p>
 
-This is more than just the Ink story&#39;s current state, it also includes the state of the DOM, which background audio is playing etc.
+<p>This is more than just the Ink story&#8217;s current state, it also includes the state of the DOM, which background audio is playing etc.</p>
 
-It does NOT include user settings, though. (For example, whether the user has the audio muted.) (User settings are saved to the localStorage independently and it&#39;s uncommon for stories to directly mess with them.)
+<p>It does NOT include user settings, though. (For example, whether the user has the audio muted.) (User settings are saved to the localStorage independently and it&#8217;s uncommon for stories to directly mess with them.)</p>
 
-The return value of this is basically like a save game state.
-</code></pre>
+<p>The return value of this is basically like a save game state.</p>
 
 <h2 id="inch.setState(appState)">inch.setState(appState)</h2>
 
-<pre><code>Sets the app&#39;s state using an app state previously returned from "inch.getState"
+<p>Sets the app&#8217;s state using an app state previously returned from &#8220;inch.getState&#8221;</p>
 
-Basically, this is like loading a save game state.
+<p>Basically, this is like loading a save game state.</p>
 
-(You do not have to call "inch.story.state.LoadJson" after this. "setState" already sets the Ink story&#39;s state correctly.)
-</code></pre>
+<p>(You do not have to call &#8220;inch.story.state.LoadJson&#8221; after this. &#8220;setState&#8221; already sets the Ink story&#8217;s state correctly.)</p>
 
 <h2 id="inch.restartStory()">inch.restartStory()</h2>
 
-<pre><code>Restarts the story immediately (no confirmation dialog).
-</code></pre>
+<p>Restarts the story immediately (no confirmation dialog).</p>
 
 <h2 id="inch.undo()">inch.undo()</h2>
 
-<pre><code>Undoes the last turn and returns true.
+<p>Undoes the last turn and returns true.</p>
 
-If undo is currently not possible, this just doesn&#39;t do anything and false is returned.
-</code></pre>
+<p>If undo is currently not possible, this just doesn&#8217;t do anything and false is returned.</p>
 
 <h2 id="inch.isUndoPossible()">inch.isUndoPossible()</h2>
 
-<pre><code>Returns true, if undo is currently possible. Otherwise returns false.
-</code></pre>
+<p>Returns true, if undo is currently possible. Otherwise returns false.</p>
 
 <h2 id="inch.showSimplePopup(htmlString)">inch.showSimplePopup(htmlString)</h2>
 
-<pre><code>Shows a simple popup. Pass the contents of the popup as a string containing HTML.
-</code></pre>
+<p>Shows a simple popup. Pass the contents of the popup as a string containing HTML.</p>
 </body></html>
