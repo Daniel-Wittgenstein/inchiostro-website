@@ -32,7 +32,13 @@ h3 { font-size: 1.3em; }
 p {
   margin-bottom: 1.2em;
 }
-    
+
+img {
+  max-width: 700px;
+  height: auto;
+  border: 1px solid #666;
+}
+
 a {
   color: #a83a07;
   text-decoration: underline;

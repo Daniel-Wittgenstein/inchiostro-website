@@ -30,11 +30,21 @@ Inchiostro (pronounced "ink-iostro") is a web template for [Ink](https://www.ink
 
 # Getting Started
 
-## Creating a new Inchiostro Project
+## Download Inky
+
+First, if you haven't done this yet, you should download the free [Inky](https://www.inklestudios.com/ink/) and familiarize yourself with it.
+
+It's a great editor that allows you to create choice-based text games.
+
+(The latest Inky version might crash on Linux. If so, try an earlier version, like version 0.13.0 from [here](https://github.com/inkle/inky/releases).)
+
+## Create a new Inchiostro Project
+
+Next, we will create a new Inchiostro project.
 
 ### The simple way: use Inkberry
 
-Inkberry is an app that creates, compiles and previews Ink stories. It also comes with Inchiostro built-in.
+Inkberry is an app that creates, compiles and previews Ink stories. It can be used with all kings of story templates, but it also comes with Inchiostro built-in.
 
 First, download [Inkberry](https://github.com/Daniel-Wittgenstein/inkberry-app/releases/tag/0.0.12/)
 
@@ -55,10 +65,11 @@ Now use the graphical user interface to create a new Inchiostro project. Done.
 ![Alt text](img/screen1.png)
 ![Alt text](img/screen2.png)
 
-### The harder way
-Alternatively, if you are familiar with JS development, you can just download the Inchiostro template and set up your own workflow. Inchiostro doesn't require a build step.
+### The manual way
 
-Inchiostro works in a similar way to the standard web template exported by Inky: it expects a file called "story.js" starting with "var storyContent = ..."
+Alternatively, [download the Inchiostro template](https://github.com/Daniel-Wittgenstein/inchiostro-dist/raw/refs/heads/main/inchiostro-latest.zip) manually.
+
+It's basically just a bunch of JS and CSS files and an index.html file. Inchiostro works in a similar way to the standard web template exported by Inky: it expects a file called "story.js" starting with "var storyContent = ..."
 
 You can just replace the contents of "story.js" with your own contents to use Inchiostro.
 
